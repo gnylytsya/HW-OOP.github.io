@@ -34,8 +34,6 @@ Item.prototype.Weigh = function () {
 	$(".weigh_item").css("background-image", this.img);
 	$(".weigh_value").html(this.weight+" gramm");
 
-
-
 var apple = new Item("apple", "Section-1", 700, 2.00, "url('img/apple.png')"),
 	banan = new Item("banan", "Section-1", 1000, 1.00, "url('img/banan.png')"),
 	berries = new Item("berries", "Section-1", 1000, 8.00, "url('img/berries.png')"),
@@ -54,17 +52,14 @@ var apple = new Item("apple", "Section-1", 700, 2.00, "url('img/apple.png')"),
 	potato = new Item("potato", "Section-2", 5000, 0.99, "url('img/potato.png')"),
 	tomato =new Item("tomato", "Section-2", 1000, 5.59, "url('img/tomato.png')");
 	
-
 var itemArray = [apple, banan, berries, carrot, cheese, cocos, coffee, cucuber,fish, lime, meat, nut, onion, potato, tomato, pineapple];
 
 function createItems(item){
 	var i = document.createElement("div");
-	$(i).addClass("item");
+	$(i).addClass("item col-lg-3 col-md-6 mb-4");
 	$(i).css("background-image", item.img);
 	i.innerHTML = "<div class='sub_item_panel'><div class='buy' onclick='"+item.name+".GetBill()'></div><div class='weigh_butt' onclick='"+item.name+".Weigh()'></div></div>"
 	$("#" + item.place + " .items").append(i);
-
-
 }
 
 _.each(itemArray, createItems);
