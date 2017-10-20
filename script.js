@@ -57,7 +57,7 @@ var itemArray = [apple, banan, berries, carrot, cheese, cocos, coffee, cucuber,f
 function createItems(item){
 	var i = document.createElement("div");
 	$(i).addClass("item col-lg-3 col-md-6 mb-4");
-	$(i).css("background-image", item.img);
+	$(i).attr("src", item.img);
 	i.innerHTML = "<div class='sub_item_panel'><div class='buy' onclick='"+item.name+".GetBill()'></div><div class='weigh_butt' onclick='"+item.name+".Weigh()'></div></div>"
 	$("#" + item.place + " .items").append(i);
 }
